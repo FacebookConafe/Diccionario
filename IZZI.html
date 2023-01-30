@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="main">
+
+  </div>
+    
+    <script>
+/*
+    document.addEventListener("DOMContentLoaded",()=>{
+        window.location.href ="https://hwaddress.com/company/arris-group-inc/";
+    });
+      */
+      /*var td = document.querySelectorAll("td");
+var arreglo = [];
+td.forEach(elementos =>{ 
+	arreglo.push(elementos.firstChild)
+  console.log(elementos.textContent);
+})
+*/
+    // Arreglos de combinaciones 
+    var abc = ["A","B","C","D","E","F"];
+    var numeros = ["0","1","2","3","4","5","6","7","8","9"]
+    var posiblesResultados = []; // Arreglo de letras 
+    var posiblesResultados2 = []; //Arreglo de Letras y numeros
+    var posiblesResultados3 = []; // Arreglo de numeros
+    var posiblesResultados4 = []; // Arreglo de numeros y letras 
+    var posiblesResultados5 = ["AB","AC","AD","AE","AF","BC","BD","BE","BF","CD","CE","CF","DE","DF","EF","FE","FD","FC","FB","FA","ED","EC","EB","EA","DC","DB","DA","CB","CA","BA"];    
+    var posiblesResultados6 = ["00","01","02","03","04","05","06","07","08","09","12","13","14","15","16","17","18","19","23","24","25","26","27","28","29","34","35","36","37","38","39","45","46","47","48","49","56","57","58","59","67","68","69","78","79","89","98","97","96","95","94","93","92","91","90","87","86","85","84","83","82","81","80","76","75","74","73","72","71","70","65","64","63","62","61","60","54","53","52","51","50","43","42","41","40","32","31","30","21","20","10"]
+    combinacionL();
+    combinacionLN();
+    combinacionNL();
+    combinacionN();
+    
+    //console.log(posiblesResultados.length);
+    //console.log(posiblesResultados2.length);
+    //console.log(posiblesResultados3.length);
+    //console.log(posiblesResultados4.length);
+    //console.log(posiblesResultados5.length);
+    //console.log(posiblesResultados6.length);
+    
+    var arreglo = [];
+    arreglo = posiblesResultados.concat(posiblesResultados2)
+    arreglo = arreglo.concat(posiblesResultados3)
+    arreglo = arreglo.concat(posiblesResultados4)
+    arreglo = arreglo.concat(posiblesResultados5)
+    arreglo = arreglo.concat(posiblesResultados6)
+    console.log(arreglo.length)
+    //////  Paso final 
+    
+    var nombreRed = "24E1";
+    var mac = ["0CB771","14C03E","C089AB","6092F5","D43FCB","9CC8FC","4C1265","2C584F","4434A7","3C0461","0CEAC9","8C5BF0","D4B27A","4C38D8","2C7E81","E02202","2C9924","005094","E0B7B1","D82522","28C87A","641269","5856E8","F80BBE","DC4517","C8AA21","0017EE","00111A","000F9F","0004BD","002642","0024A1","002210","0022B4","00149A","0014E8","0019C0","00E06F","8096B1","707E43","00152F","001FC4","001CFB","002395","0023AF","F87B7A","0015CE","0015A2","0015A3","0015A4","0000CA","0CF893","3CDFA9","8461A0","0015D1","001DD0","001DD3","ACB313","5C8FE0","90C792","BCCAB5","D039B3","000FCC","384C90","10868C","BC5BD5","D46C6D","A0E7AE","98F781","A49813","60D248","C85261","8871B1","F0AF85","FCAE34","8C61A3","F8F532","B083D6","C0A00D","A89FEC","B0935B","909D7D","E45740","2C1DB8","7C2634","54E2E0","347A60","001CC3","7085C6","94E8C5","A811FC","002040","386BBB","E86D52","3C754A","E48399","002143","74F612","002495","0024A0","00080E","00909C","001225","145BD1","6CC1D2","1C1448","001784","001C11","001E46","0018A4","0018C0","002374","0015CF","9C3426","001DD1","001DCF","001DD5","001DD4","CCA462","0000C5","6455B1","14CFE2","44E137","6C639C","484EFC","5860D8","50A5DC","B05DD4","A4438C","705425","402B50","E49F1E","14D4FE","748A0D","CC75E2","88964E","240A63","F88B37","509551","E8825B","984B4A","18B81F","105611","7823AE","003676","FC8E7E","FC6FB7","D42C0F","A055DE","80F503","44AAF5","287AEE","BC644B","FC51A4","044E5A","38700C","A41588","E46449","40FC89","2C9E5F","002636","001CC1","001E5A","001371","0023EE","001ADE","745612","0050E3","002136","001626","0019A6","001311","7CBFB1","E83EFC","900DCB","001DCD","001DD2","8C09F4","E8ED05","789684","CC65AD","D40AA9","203D66","D404CD","ECA940","80E540","C09435","E4F75B","F8790A","1C937C","109397","5075F1","6CA604","D4AB82","704FB8","F82DC0","189C27","6402CB","BC2E48","608CE6","B0DAF9","1835D1","48D343","5CE30E","400D10","70B14E","000E5C","F8A097","C0C522","B81619","B077AC","00192C","00195E","001A1B","001A66","001A77","64ED57","A4ED4E","00211E","002180","001BDD","001D6B","001DBE","0012C9","0023A2","0023ED","001B52","001E8D","002493","002641","0015D0","001596","20E564","90B134","40B7F3","0017E2","001675","000CE5","0003E0","601971","6CCA08","78719C","D40598","E83381","8C7F3B","5C571A","E8892C","94877C","407009","083E0C","3C36E4","1C1B68","207355","F8EDA5","5465DE","3C7A8A","1005B1","404C77","A897CD","ACF8CC","8C5A25","70DFF7","F863D9","A405D6","DCA633","946269","C863FC","ACDB48","88EF16","1820D5","948FCF","A8F5DD","F0FCC8","B4F2E8","2C9569","EC7097","5819F8","20F19E","F40E83","98F7D7","2CA17D","00ACE0","446AB7","D0E54D","A0C562","8496D8","0026D9","00D037","84E058","707630","5CB066","341FE4","986B3D","74EAE8","CC7D37","A47AA4","001700","0016B5","0015A8","00159A","001180","000B06","00D088","00128A","002375","0023A3","001ADB","001F7E","0011AE","94CCB9","3C438E","0024C1","0025F2","0025F1","001404","001AAD","0026BA","00230B","74E7C6","001C12","001DD6","903EAB","306023","14ABF0","901ACA","C83FB4","E0B70A","001DCE","C005C2","ACEC80","20F375","84BB69","A0687E","A8705D","2494CB","786A1F","2C00AB"];
+    var resultadoFinal = [];
+    var ite = 0;
+
+    function final(){
+    for(let a=0; a<mac.length;a++){
+        for(let b=0; b<arreglo.length;b++){
+        resultadoFinal[ite] = mac[a]+arreglo[b]+nombreRed;
+        ite++;
+        }
+    }
+    }
+    final()
+    console.log(resultadoFinal.slice());
+    
+    
+    
+    function combinacionL(){
+        for(let i=0;i<abc.length;i++){
+          posiblesResultados[i] =  abc[i]+abc[i];
+        }
+    }
+    function combinacionLN(){
+      let iterador = 0;
+      for(let i=0;i<abc.length;i++){
+          for(let j=0;j<numeros.length;j++){
+            posiblesResultados2[iterador] = abc[i]+numeros[j];
+            iterador++;
+          } 
+       }
+    }
+    function combinacionN(){
+        for(let i=0;i<numeros.length;i++){
+          posiblesResultados3[i] =  numeros[i]+numeros[i];
+        }
+    }
+    
+    function combinacionNL(){
+      let iterador = 0;
+      for(let i=0;i<numeros.length;i++){
+          for(let j=0;j<abc.length;j++){
+            posiblesResultados4[iterador] = numeros[i]+abc[j];
+            iterador++;
+          } 
+       }
+    }
+    let m = document.querySelector(".main");
+    resultadoFinal.forEach(ele =>{
+        var li = document.createElement("li");
+        li.innerHTML = ele;
+        li.style.listStyle ="none"
+        m.appendChild(li);
+    })
+
+    </script>
+</body>
+</html>
